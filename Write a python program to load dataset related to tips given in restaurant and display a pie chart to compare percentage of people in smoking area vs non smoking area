@@ -1,0 +1,11 @@
+import matplotlib.pyplot as plt
+
+# Count the occurrences of "Yes" and "No" in the Smoking column
+smoking_counts = data['Smoking'].value_counts()
+
+# Plot a pie chart
+plt.figure(figsize=(8, 6))
+plt.pie(smoking_counts, labels=smoking_counts.index, autopct='%1.1f%%', startangle=90, colors=['lightblue', 'salmon'])
+plt.title('Percentage of People in Smoking vs Non-Smoking Areas')
+plt.axis('equal')  # Equal aspect ratio to ensure the pie is circular
+plt.show()
