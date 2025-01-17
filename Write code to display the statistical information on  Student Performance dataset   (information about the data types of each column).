@@ -1,0 +1,19 @@
+import pandas as pd
+
+# Define the dataset columns based on the uploaded file
+columns = [
+    "StudentID", "G1", "G2", "G3", "Mjob", "Fjob", "age", "address", 
+    "studytime", "failures", "schoolsup", "famsup", "paid", "activities", 
+    "nursery", "higher", "internet", "romantic"
+]
+
+# Load the dataset from the file (adjust file reading as necessary)
+data = pd.read_csv("Row.pdf", sep="\s+", names=columns)
+
+# Display statistical information
+print("Statistical Information:")
+print(data.describe(include='all'))  # Includes statistics for all columns
+
+# Display data types of each column
+print("\nData Types:")
+print(data.dtypes)
