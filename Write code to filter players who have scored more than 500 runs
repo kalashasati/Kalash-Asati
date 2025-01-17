@@ -1,0 +1,5 @@
+file_path = '/mnt/data/ipl_matches_smalldata.csv'
+data = pd.read_csv(file_path)
+
+# Display the first few rows and columns to understand the new dataset's structure
+data.head(), data.columns
