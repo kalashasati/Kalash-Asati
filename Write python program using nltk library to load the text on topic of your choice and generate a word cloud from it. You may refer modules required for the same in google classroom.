@@ -1,0 +1,34 @@
+import nltk
+from nltk.corpus import stopwords
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+
+# Download NLTK data (stopwords and any other required data)
+nltk.download('punkt')
+nltk.download('stopwords')
+
+# Sample text on "Natural Language Processing"
+text = """
+Natural Language Processing (NLP) is a branch of artificial intelligence that helps computers understand, interpret, 
+and respond to human language in a meaningful way. NLP techniques are used in various applications, such as language 
+translation, sentiment analysis, speech recognition, and chatbots. With the advent of deep learning, NLP has made 
+significant advancements, enabling tasks like text generation, summarization, and question-answering. 
+"""
+
+# Tokenize the text and remove stopwords
+words = nltk.word_tokenize(text.lower())
+stop_words = set(stopwords.words('english'))
+filtered_words = [word for word in words if word.isalnum() and word not in stop_words]
+
+# Generate a word cloud
+wordcloud = WordCloud(
+    width=800, height=400, background_color='white', 
+    max_words=100, colormap='viridis'
+).generate(' '.join(filtered_words))
+
+# Display the word cloud
+plt.figure(figsize=(10, 6))
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.axis('off')
+plt.title("Word Cloud: Natural Language Processing", fontsize=16)
+plt.show()
