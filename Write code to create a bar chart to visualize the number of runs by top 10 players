@@ -1,0 +1,11 @@
+import matplotlib.pyplot as plt
+
+# Bar chart for top 10 players and their total runs
+plt.figure(figsize=(10, 6))
+plt.bar(top_10_players['batter'], top_10_players['batsman_runs'], color='skyblue')
+plt.title('Number of Runs Scored by Top 10 Players', fontsize=14)
+plt.xlabel('Players', fontsize=12)
+plt.ylabel('Runs Scored', fontsize=12)
+plt.xticks(rotation=45, ha='right', fontsize=10)
+plt.tight_layout()
+plt.show()
