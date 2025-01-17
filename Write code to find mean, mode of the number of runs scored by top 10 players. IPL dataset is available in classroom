@@ -1,0 +1,10 @@
+from scipy import stats
+
+# Get the top 10 players by total runs scored
+top_10_players = total_runs_by_batter.sort_values(by='batsman_runs', ascending=False).head(10)
+
+# Calculate the mean and mode of the runs scored by these top 10 players
+mean_runs = top_10_players['batsman_runs'].mean()
+mode_runs = stats.mode(top_10_players['batsman_runs'], keepdims=True)[0][0]
+
+top_10_players, mean_runs, mode_runs
